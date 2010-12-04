@@ -1,0 +1,10 @@
+body {}
+
+#header {}
+#header h1 {}
+
+#menu {}
+#menu ul {  }
+#menu ul li { display:inline; list-style:none; }
+
+#content {}
