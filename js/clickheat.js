@@ -171,7 +171,7 @@ function catchClickHeat(e)
 var clickHeatPage = ''; /** Backward compatibility */
 var clickHeatGroup = '';
 var clickHeatSite = '';
-var clickHeatServer = '../ClickHeatRedux/click.cfm';
+var clickHeatServer = 'click.cfm';
 var clickHeatLastIframe = -1;
 var clickHeatTime = 0;
 var clickHeatQuota = -1;
