@@ -9,7 +9,7 @@
 		<cfreturn this />
 	</cffunction>
 	
-    <cffunction name="OnMissingMethod" returnType="any" access="public" output="true" hint="Handles getters and setters">
+    <cffunction name="onMissingMethod" returnType="any" access="public" output="true" hint="Handles getters and setters">
         <cfargument name="MissingMethodName" type="string" required="true" hint="The name of the missing method">
         <cfargument name="MissingMethodArguments" type="struct" required="true" hint="The arguments passed in to the missing method">
 		
