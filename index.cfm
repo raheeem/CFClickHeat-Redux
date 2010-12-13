@@ -32,3 +32,8 @@
 	</body>
 </html>
 </cfoutput>
+
+
+<cfset qlogs = application.clickheat.getLogs() />
+
+<cfdump var="#qLogs#">

@@ -6,10 +6,10 @@
 		
 		<cfswitch expression="#super.getStorageType()#">
 		    <cfcase value="database">
-			    <cfset variables.logWriter = CreateObject("component","DatabaseLogWriter").init(datasource=super.getDatasource()) />
+			    <cfset variables.logService = CreateObject("component","DatabaselogService").init(datasource=super.getDatasource()) />
 			</cfcase>
 			<cfdefaultcase>
-			     <cfset variables.logWriter = CreateObject("component","FileLogWriter").init(logFile=super.getLogFile()) />
+			     <cfset variables.logService = CreateObject("component","FilelogService").init(logFile=super.getLogFile()) />
 			</cfdefaultcase>
 		</cfswitch>
 				
@@ -25,18 +25,18 @@
         <cfargument name="browser" type="string" required="true" />
         <cfargument name="group" type="string" required="false" default="" />
         		
-        <cfset variables.logWriter.writeLog(ArgumentCollection=arguments) />
+        <cfset variables.logService.writeLog(ArgumentCollection=arguments) />
     </cffunction>
 	
 	<cffunction name="getLogs" access="public" returntype="query" output="false">
 	   <cfargument name="start" type="date" required="false" default="#dateAdd("d",-7,now())#" />
        <cfargument name="end" type="date" required="false" default="#now()#" />
 	   
-	   <cfreturn variables.logWriter.getLogs(ArgumentCollection=arguments) />
+	   <cfreturn variables.logService.getLogs(ArgumentCollection=arguments) />
 	</cffunction>
 	
 	<cffunction name="deleteLogs" access="public" returntype="void" output="false">
-	   <cfset varaibles.logWriter.deleteLogs() />
+	   <cfset varaibles.logService.deleteLogs() />
 	</cffunction>
 		
 	<cffunction name="renderHeatMap" access="public" returnType="string" output="false">
