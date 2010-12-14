@@ -25,7 +25,7 @@
 		<script type="text/javascript" src="js/clickheat.js"></script>
 		<script type="text/javascript">
 		clickHeatSite = 1;
-		clickHeatGroup = 'group1';
+		clickHeatGroup = '#cgi.server_name#';
 		clickHeatServer = 'click.cfm';
 		initClickHeat();
 		</script>
